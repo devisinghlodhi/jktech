@@ -55,6 +55,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       // In a real app, you would call your API
       // This is a mock implementation
+      const alluserdata = localStorage.getItem("users");
+      const alluser = alluserdata ? JSON.parse(alluserdata) : [];
+
       if (email === "admin@gmail.com" && password === "Admin@123") {
         const mockUser: User = {
           id: "1",
@@ -66,19 +69,28 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(mockUser)
         localStorage.setItem("user", JSON.stringify(mockUser))
         router.push("/dashboard")
-      } else if (email === "user@example.com" && password === "password") {
-        const mockUser: User = {
-          id: "2",
-          name: "Regular User",
-          email: "user@example.com",
-          role: "user",
-        }
+      } 
+    //   else if (email === "user@example.com" && password === "password") {
+    //     const mockUser: User = {
+    //       id: "2",
+    //       name: "Regular User",
+    //       email: "user@example.com",
+    //       role: "user",
+    //     }
 
-        setUser(mockUser)
-        localStorage.setItem("user", JSON.stringify(mockUser))
-        router.push("/dashboard")
-      } else {
-        throw new Error("Invalid credentials")
+    //     setUser(mockUser)
+    //     localStorage.setItem("user", JSON.stringify(mockUser))
+    //     router.push("/dashboard")
+    //   } 
+      else {
+        const validUser = alluser.find((item: User)=> item.email == email && item.password == password);
+        if(validUser){
+            setUser(validUser)
+            localStorage.setItem("user", JSON.stringify(validUser))
+            router.push("/dashboard")
+        }else{
+            throw new Error("Invalid credentials")    
+        }
       }
     } catch (error) {
       if (error instanceof Error) {
