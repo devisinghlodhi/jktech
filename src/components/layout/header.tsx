@@ -28,8 +28,8 @@ export default function Header() {
     <header className="border-b sticky top-0 z-40 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold">
-            DocManager
+          <Link href="/dashboard" className="text-2xl font-bold">
+            Doc Manager
           </Link>
 
           {/* Desktop Navigation */}
@@ -54,7 +54,7 @@ export default function Header() {
             </Link>
             {user?.role === "admin" && (
               <Link
-                href="/admin"
+                href="/admin/users"
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
                 Admin
@@ -107,7 +107,7 @@ export default function Header() {
             ) : (
               <div className="flex items-center space-x-2">
                 <Link
-                  href="/auth/login"
+                  href="/login"
                   className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
                 >
                   Login
@@ -197,7 +197,7 @@ export default function Header() {
               ) : (
                 <div className="flex flex-col space-y-2">
                   <Link
-                    href="/auth/login"
+                    href="/login"
                     className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors text-center"
                     onClick={() => setMobileMenuOpen(false)}
                   >
