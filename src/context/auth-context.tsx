@@ -149,7 +149,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const logout = () => {
     setUser(null)
     localStorage.removeItem("user")
-    router.push("/")
+    router.push("/login")
   }
 
   return <AuthContext.Provider value={{ user, login, signup, logout, loading, error }}>{children}</AuthContext.Provider>
