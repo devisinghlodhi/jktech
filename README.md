@@ -4,7 +4,7 @@ This guide provides instructions to **run** and **deploy** your Next.js project 
 
 ## Admin Credentials - 
 
-- username: admin@example.com
+- username: admin@gmail.com
 - password: Admin@123
 
 ## 🧾 Prerequisites
