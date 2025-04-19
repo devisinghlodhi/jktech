@@ -2,6 +2,11 @@
 
 This guide provides instructions to **run** and **deploy** your Next.js project to production.
 
+## Admin Credentials - 
+
+- username: admin@example.com
+- password: Admin@123
+
 ## 🧾 Prerequisites
 
 Before you can run or deploy this project, ensure you have the following tools installed:
@@ -12,6 +17,7 @@ Before you can run or deploy this project, ensure you have the following tools i
 - **Hosting Platform** (e.g., Vercel, Netlify, or custom VPS)
 
 ---
+
 
 ## 🏃‍♂️ Running the Project Locally
 
